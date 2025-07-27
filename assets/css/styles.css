@@ -1,0 +1,1132 @@
+/* ==== SHARED GENERAL CSS ==== */
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+#main {
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans";
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: #062a87;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #062a87;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "DM Sans";
+  color: #444444;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 50px 0;
+}
+
+.section-title {
+  padding: 20px 0;
+  position: relative;
+}
+
+.section-title h2 {
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  padding-bottom: 0;
+  color: #444444;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title h3 {
+  font-family: "DM Sans";
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title p {
+  font-size: 17px;
+  font-family: "DM Sans";
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  text-align: justify;
+}
+
+.section-title span {
+  position: absolute;
+  top: 30px;
+  color: #eef0f2;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+@media (max-width: 575px) {
+  .section-title h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .section-title h3 {
+    text-align: center;
+  }
+
+  .section-title span {
+    font-size: 38px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #e72929;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #0c359e;
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  z-index: 997;
+  transition: all 0.5s;
+  height: 80px;
+  background: rgba(68, 68, 68, 0.8);
+}
+
+#header.header-transparent {
+  background: transparent;
+}
+
+#header.header-scrolled {
+  height: 60px;
+  background: rgba(67, 67, 67, 0.8);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  color: #fff;
+  transition: 0.3s;
+  font-size: 12px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 14px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
+  color: #d4493f;
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 0;
+  transition: 1s;
+  position: fixed;
+  display: none;
+  top: 20px;
+  right: 15px;
+  z-index: 9999;
+  /* Pastikan tombol toggle di atas elemen lain */
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(36, 41, 46, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #3b434a;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
+  color: #d4493f;
+}
+
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover > a {
+  color: #ffb727;
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/hero-bg.jpg") top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#hero::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.45);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#hero h1 {
+  padding: 0;
+  font-size: 60px;
+  font-family: "Satisfy", serif;
+  color: white;
+}
+
+#hero h2 {
+  color: #e7e7e7;
+  padding: 0 0 120px 0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#hero .btn-scroll {
+  transition: 0.4s;
+  color: rgba(255, 255, 255, 0.864);
+  animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+
+#hero .btn-scroll i {
+  font-size: 48px;
+}
+
+#hero .btn-scroll:hover {
+  color: #2261ff;
+}
+
+@media (max-width: 476px) {
+  #hero h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  #hero h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #hero {
+    background-image: url("../img/hero-bg.jpg");
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  #hero::before {
+    height: 100vh;
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===== Hero SECTION ===== */
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 20px 0;
+  background-color: #f4f5f6;
+  min-height: 40px;
+  margin-top: 78px;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 60px;
+  }
+}
+
+.breadcrumbs h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs h2 {
+    margin: 0 0 10px 0;
+  }
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #6c757d;
+  content: "";
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs .d-flex {
+    display: block;
+  }
+
+  .breadcrumbs ol {
+    display: block;
+  }
+
+  .breadcrumbs ol li {
+    display: inline-block;
+  }
+}
+
+/* ===== ABOUT SECTION ===== */
+/*--------------------------------------------------------------
+# About 
+--------------------------------------------------------------*/
+.about .content p {
+  font-size: 16px;
+  text-align: justify;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .img-fluid {
+  background-position: top center;
+  background-size: contain;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.about {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 476px) {
+  .about {
+    width: 100%;
+    height: auto;
+    text-align: justify;
+    padding: 10px;
+  }
+
+  .about .image {
+    margin: 0 auto;
+    display: block;
+    width: 300px;
+    height: 300px;
+    top: 0px;
+  }
+
+  .img-fluid {
+    margin-bottom: 20px;
+  }
+}
+
+/* ===== ADD-ONS SECTION ===== */
+/*------------------------------------------------
+  Add-ons in HTML
+------------------------------------------------*/
+.img-fluid {
+  border-radius: 20px;
+}
+
+.garis1 {
+  background-color: #8b322c;
+  border: none;
+  border-radius: 10px;
+  height: 3px;
+  opacity: 10;
+  width: 300px;
+}
+
+.garis2 {
+  border: none;
+  border-radius: 10px;
+  height: 5px;
+  background-color: #8b322c;
+  margin-right: 30%;
+  margin-left: 30%;
+  opacity: 10;
+}
+
+.vl {
+  border-left: 2px solid #8b322c;
+  height: 300px;
+  position: relative;
+  left: 105%;
+  margin-left: -3px;
+  margin-bottom: -330px;
+  top: -330px;
+}
+
+.regist {
+  font-style: italic;
+  text-decoration: underline;
+  border-radius: 12px;
+}
+
+.regist:hover {
+  color: #8b322c;
+}
+
+.daftar {
+  font-weight: 700;
+  font-style: italic;
+  border-radius: 20px;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+.img-1 {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  right: 55px;
+  top: 15px;
+}
+
+.img-2 {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.daftar:hover {
+  color: #d4493f;
+}
+
+@media (max-width: 500px) {
+  .vl {
+    display: none;
+  }
+
+  .garis1 {
+    text-align: center;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .img-1,
+  .img-2 {
+    display: none;
+  }
+}
+
+/* ===== CONTACT SECTION ===== */
+/*--------------------------------------------------------------
+# Contact Me
+--------------------------------------------------------------*/
+.contact .info-box {
+  background-color: white;
+  color: #3b434a;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  padding: 20px 0 30px 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.contact {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.contact.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact .info-box h3 {
+  font-size: 26px;
+  color: #444444;
+  margin: 10px 0;
+}
+
+.contact .info-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.contact .social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  color: #444444;
+  line-height: 1;
+  margin: 0 8px;
+  transition: 0.3s;
+  padding: 16px;
+  border-radius: 50%;
+  border: 1px solid #444444;
+}
+
+.contact .social-links a:hover {
+  color: #fff;
+  border-color: #8b322c;
+  background: #8b322c;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== ESKUL SECTION ===== */
+/*------------------------------------------------------------
+# Latihan 
+--------------------------------------------------------------*/
+.latihan {
+  position: relative;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.latihan.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.latihan-container {
+  margin: 40px;
+}
+
+.pemanasan {
+  width: 550px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 476px) {
+  .latihan-container {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .pemanasan {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+/* ===== FOOTER SECTION ===== */
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: url("../img/bg-img.jpeg") top center no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#footer .container {
+  position: relative;
+}
+
+#footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  font-family: "Satisfy", serif;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+#footer p {
+  color: #fff;
+  font-size: 15;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+#footer .copyright {
+  margin: 0 0 5px 0;
+}
+
+#footer .credits {
+  font-size: 13px;
+}
+
+/* ===== FORM SECTION ===== */
+/*------------------------------------------------
+  # Formulir
+  ----------------------------------------------- */
+
+.formulir {
+  padding: 60px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+  position: relative;
+}
+
+.bordering {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 9px;
+  position: relative;
+}
+
+.bordering.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 1em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.5em;
+  font-weight: 600;
+  color: #e72929;
+}
+
+.submit {
+  cursor: pointer;
+  border: none;
+  background-color: #8b322c;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #8b322c89;
+  transition: 0.5s ease;
+}
+
+.kotak-alat {
+  max-width: 100%;
+}
+
+.alat {
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid #6c757d8d;
+  width: 100%;
+}
+
+@media (max-width: 476px) {
+  .img1,
+  .img-2 {
+    display: none;
+  }
+
+  .bordering {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .formulir {
+    padding: 0;
+    width: 100%;
+  }
+
+  .form {
+    width: 90%;
+    border-radius: 20px;
+    padding: 1 0px;
+    margin: 0 auto;
+  }
+
+  .submit {
+    font-size: 14px;
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* ===== JADWAL SECTION ===== */
+/*--------------------------------------------------------------
+# Jadwal Latihan
+--------------------------------------------------------------*/
+
+.judul {
+  margin-top: 20px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #8b322c;
+}
+
+.jadwal-item h4 {
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: -10px;
+  margin-top: 20px;
+  color: rgb(217, 184, 0);
+}
+
+.jadwal-item p {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 476px) {
+  .judul {
+    text-align: center;
+  }
+}
+
+/* ===== LATIHAN SECTION ===== */
+/*------------------------------------------------------------
+# Latihan 
+--------------------------------------------------------------*/
+.latihan {
+  position: relative;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.latihan.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pemanasan {
+  width: 550px;
+}
+
+@media (max-width: 476px) {
+  .latihan-container {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .pemanasan {
+    width: 340px;
+  }
+}
+
+/* ===== TRAINERS SECTION ===== */
+/*-------------------------------------------------------------
+# Pelatih
+-------------------------------------------------------------*/
+.kartu {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.kartu.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container-pelatih {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-pelatih {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 #444444;
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.card-pelatih:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.title,
+h2 {
+  color: #444444;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.icon {
+  text-decoration: none;
+  font-size: 22px;
+  color: #444444;
+  margin: 0 10px;
+}
+
+.icon:hover {
+  color: #8b322c;
+}
+
+.img-avatar {
+  width: 250px;
+  height: auto;
+}
+
+@media (max-width: 476px) {
+  .container-pelatih {
+    flex-direction: column;
+  }
+
+  .card-pelatih {
+    width: 100%;
+    margin: 30px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: url("../img/bg-img.jpeg") top center no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#footer .container {
+  position: relative;
+}
+
+#footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  font-family: "Satisfy", serif;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+#footer p {
+  color: #fff;
+  font-size: 15;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+#footer .copyright {
+  margin: 0 0 5px 0;
+}
+
+#footer .credits {
+  font-size: 13px;
+}
